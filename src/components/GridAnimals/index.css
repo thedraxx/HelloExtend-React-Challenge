@@ -1,0 +1,33 @@
+
+.Spin{
+        width: 100px;
+        height: 100px;
+        background-color: #00425A ;
+        animation-name: spin;
+        animation-duration: 5000ms;
+        animation-iteration-count: infinite;
+        animation-timing-function: linear;
+        transform: rotate(3deg);
+        transform: rotate(0.3rad);
+        transform: rotate(3grad);
+        transform: rotate(.03turn);
+        transform: rotate(0.3turn);
+        border-radius:  35px;
+        -webkit-border-radius:  35px;
+        -moz-border-radius:  35px;
+        -ms-border-radius:  35px;
+        -o-border-radius:  35px;
+}
+
+
+
+      
+@keyframes spin {
+    from {
+        transform:rotate(0deg);
+    }
+    to {
+        transform:rotate(360deg);
+    }
+}
+
