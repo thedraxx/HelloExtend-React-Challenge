@@ -17,7 +17,7 @@ const GridAnimals = () => {
     const getInfoDogs = async () => {
         if (search === '') return;
         setOnLoading(true)
-        const data = await dogsAPI.get<DogsInfo>(`/breed/${search}/images`);
+        const data = await dogsAPI.get<DogsInfo>(`/breed/${search}/images/random/10`);
         setDogs(data.data);
         setOnLoading(false)
     }
