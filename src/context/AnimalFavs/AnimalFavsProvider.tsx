@@ -19,11 +19,8 @@ export const AnimalFavsProvider = ({ children }: Props) => {
     const [state, dispatch] = useReducer(AnimalFavsReducer, Animals_INITIAL_STATE)
 
     const ToggleAnimals = async (animals: string) => {
-
         dispatch({ type: '[Toggle] - Toggle-Animals', payload: animals })
-
     }
-
 
     return (
         <AnimalFavsContext.Provider value={{

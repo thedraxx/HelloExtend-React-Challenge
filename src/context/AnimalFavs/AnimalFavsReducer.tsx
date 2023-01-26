@@ -20,7 +20,6 @@ export const AnimalFavsReducer = (state: AnimalFavsState, action: entriesActionT
                 Animals: [...state.Animals, action.payload]
             }
 
-
         default:
             return state;
     }

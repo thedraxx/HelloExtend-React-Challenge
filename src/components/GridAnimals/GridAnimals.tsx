@@ -11,10 +11,7 @@ const GridAnimals = () => {
     const [dogs, setDogs] = useState<DogsInfo>()
     const [onLoading, setOnLoading] = useState<boolean>(false)
     const { search } = useContext(SearchContext)
-    const [AnimalListFavs, setAnimalListFavs] = useState<string[]>([])
-
     const { ToggleAnimals, Animals } = useContext(AnimalFavsContext)
-
 
     useEffect(() => {
         getInfoDogs();
@@ -27,21 +24,6 @@ const GridAnimals = () => {
         setDogs(data.data);
         setOnLoading(false)
     }
-
-
-    // const addAnimalsFavs = (animal: string) => {
-
-    //if (AnimalListFavs.includes(animal)) {
-    //       const newList = AnimalListFavs.filter((item) => item !== animal)
-    //     setAnimalListFavs(newList)
-    // console.log("eliminando animal")
-    //   return;
-    // }
-    //console.log("agregando animal")
-    //setAnimalListFavs([...AnimalListFavs, animal])
-    //return
-    //}
-
 
     return (
         <div>
