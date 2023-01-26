@@ -4,12 +4,17 @@ import { DogsInfo } from '../../../interfaces/dogsInterfaces';
 import './index.css'
 import { SearchContext } from '../../context/SearchContext';
 import { AiOutlineHeart, AiTwotoneHeart } from "react-icons/ai";
+import { AnimalFavsContext } from '../../context/AnimalFavs/AnimalFavsContext';
 
 const GridAnimals = () => {
 
     const [dogs, setDogs] = useState<DogsInfo>()
     const [onLoading, setOnLoading] = useState<boolean>(false)
     const { search } = useContext(SearchContext)
+    const [AnimalListFavs, setAnimalListFavs] = useState<string[]>([])
+
+    const { ToggleAnimals, Animals } = useContext(AnimalFavsContext)
+
 
     useEffect(() => {
         getInfoDogs();
@@ -22,6 +27,21 @@ const GridAnimals = () => {
         setDogs(data.data);
         setOnLoading(false)
     }
+
+
+    // const addAnimalsFavs = (animal: string) => {
+
+    //if (AnimalListFavs.includes(animal)) {
+    //       const newList = AnimalListFavs.filter((item) => item !== animal)
+    //     setAnimalListFavs(newList)
+    // console.log("eliminando animal")
+    //   return;
+    // }
+    //console.log("agregando animal")
+    //setAnimalListFavs([...AnimalListFavs, animal])
+    //return
+    //}
+
 
     return (
         <div>
@@ -42,16 +62,16 @@ const GridAnimals = () => {
                                                 className='object-cover h-96 w-96'
                                             />
                                             <button className='flex justify-end mt-0'
-                                                onClick={() => { console.log('click') }}
+                                                onClick={() => { ToggleAnimals(dog) }}
                                             >
-
                                                 <div className='flex justify-end ' >
-                                                    <AiOutlineHeart className='text-4xl text-red-500' />
+                                                    {
+                                                        Animals.includes(dog) ?
+                                                            <AiTwotoneHeart className='text-4xl text-red-500' /> : <AiOutlineHeart className='text-4xl text-red-500' />
+                                                    }
                                                 </div>
                                             </button>
-
                                         </div>
-
                                     </div>
                                 ))
                             }
