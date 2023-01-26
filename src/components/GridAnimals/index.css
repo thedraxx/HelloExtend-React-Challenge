@@ -1,33 +1,46 @@
-
-.Spin{
-        width: 100px;
-        height: 100px;
-        background-color: #00425A ;
-        animation-name: spin;
-        animation-duration: 5000ms;
-        animation-iteration-count: infinite;
-        animation-timing-function: linear;
-        transform: rotate(3deg);
-        transform: rotate(0.3rad);
-        transform: rotate(3grad);
-        transform: rotate(.03turn);
-        transform: rotate(0.3turn);
-        border-radius:  35px;
-        -webkit-border-radius:  35px;
-        -moz-border-radius:  35px;
-        -ms-border-radius:  35px;
-        -o-border-radius:  35px;
-}
-
-
-
+.Spin {
+    width: 48px;
+    height: 48px;
+    border: 3px dotted #FFF;
+    border-style: solid solid dotted dotted;
+    border-radius: 50%;
+    display: inline-block;
+    position: relative;
+    box-sizing: border-box;
+    animation: rotation 2s linear infinite;
+    background-color: #35a1ff;
+  }
+  .loader::after {
+    content: '';  
+    box-sizing: border-box;
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    border: 3px dotted #FF3D00;
+    border-style: solid solid dotted;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    animation: rotationBack 1s linear infinite;
+    transform-origin: center center;
+  }
       
-@keyframes spin {
-    from {
-        transform:rotate(0deg);
+  @keyframes rotation {
+    0% {
+      transform: rotate(0deg);
     }
-    to {
-        transform:rotate(360deg);
+    100% {
+      transform: rotate(360deg);
     }
-}
-
+  } 
+  @keyframes rotationBack {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(-360deg);
+    }
+  } 

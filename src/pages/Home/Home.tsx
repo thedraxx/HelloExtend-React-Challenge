@@ -6,8 +6,13 @@ import GridFavorites from '../../components/GridFavorites/GridFavorites'
 const Home = () => {
     return (
         <div className='content-center' >
-            <div className='flex justify-start ml-6 mt-5 sm:ml-3 mt-5 '>
+            <div className='flex justify-start ml-6 mt-5 sm:ml-3 mt-5' style={{
+                display: 'flex',
+                justifyContent: 'space-between',
+                alignItems: 'center',
+            }}>
                 <h1 className='font-bold text-center  capitalize'>Dogs Breeds</h1>
+                <h1 className='font-bold text-center  capitalize'>❤</h1>
             </div>
             <Search />
             <GridAnimals />
